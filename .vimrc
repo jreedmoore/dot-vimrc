@@ -1,8 +1,18 @@
 " not vi
 set nocompatible
 
-" load plugins
-execute pathogen#infect()
+" 
+call plug#begin('~/.vim/plugged')
+
+Plug 'sickill/vim-monokai'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-surround'
+Plug 'jreybert/vimagit'
+Plug 'janko-m/vim-test'
+
+call plug#end()
 
 " make vim useful
 syntax on
