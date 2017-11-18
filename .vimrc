@@ -71,7 +71,7 @@ endif
 nnoremap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " colorscheme
-colorscheme molokai
+colorscheme monokai
 
 set foldlevelstart=99 " start unfolded
 
