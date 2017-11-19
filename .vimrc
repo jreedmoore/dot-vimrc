@@ -10,7 +10,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
 Plug 'jreybert/vimagit'
-Plug 'janko-m/vim-test'
+" custom version of vim-test for scala test until I prove it and PR
+Plug 'jlulian38/vim-test'
+
 
 call plug#end()
 
@@ -44,6 +46,13 @@ nnoremap <C-H> <C-W><C-H>
 vnoremap // y/\V<C-R>"<CR>
 
 let mapleader="," " set leader
+
+" vim test bindings
+nmap <silent> <leader>t :TestNearest<CR>
+nmap <silent> <leader>T :TestFile<CR>
+nmap <silent> <leader>a :TestSuite<CR>
+nmap <silent> <leader>l :TestLast<CR>
+nmap <silent> <leader>g :TestVisit<CR>
 
 " indent a whole file
 noremap <leader>ai mzgg=G`z 
