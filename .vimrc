@@ -10,6 +10,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
 Plug 'jreybert/vimagit'
+Plug 'tpope/vim-fugitive'
 " custom version of vim-test for scala test until I prove it and PR
 Plug 'jlulian38/vim-test'
 
