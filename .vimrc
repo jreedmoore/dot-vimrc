@@ -28,6 +28,10 @@ set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
 
+" use smart case for searches
+set ignorecase
+set smartcase
+
 " configure status line / airline
 let g:airline#extensions#tabline#enabled = 1
 set laststatus=2 " force status line w/o splits
