@@ -11,6 +11,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-surround'
 Plug 'jreybert/vimagit'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 " custom version of vim-test for scala test until I prove it and PR
 Plug 'jlulian38/vim-test'
 
@@ -58,6 +59,9 @@ nmap <silent> <leader>T :TestFile<CR>
 nmap <silent> <leader>a :TestSuite<CR>
 nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
+
+" NERD Tree bindings
+map <C-n> :NERDTreeToggle<CR>
 
 " indent a whole file
 noremap <leader>ai mzgg=G`z 
