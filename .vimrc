@@ -4,7 +4,7 @@ set nocompatible
 " 
 call plug#begin('~/.vim/plugged')
 
-Plug 'sickill/vim-monokai'
+Plug 'altercation/vim-colors-solarized'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'qpkorr/vim-bufkill'
@@ -66,30 +66,22 @@ map <C-n> :NERDTreeToggle<CR>
 " indent a whole file
 noremap <leader>ai mzgg=G`z 
 
-" python debug!
-noremap <leader>pdb oimport pdb; pdb.set_trace()<ESC>
-
-" insert copyright
-noremap <leader>cp ggO# -*- coding: utf-8 -*-<CR>##########################################################################<CR>#<CR># Copyright (c) 2017, Plexxi Inc. and its licensors.<CR>#<CR># All rights reserved.<CR>#<CR># Use and duplication of this software is subject to a separate license<CR># agreement between the user and Plexxi or its licensor.<CR>#<CR>##########################################################################<CR><ESC>
-
-" use silver-search
-" https://robots.thoughtbot.com/faster-grepping-in-vim
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
+" use ripgrep
+" https://gist.github.com/darrylhebbes/4cc1b0995c265e8e08509b48954642c6
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
   let g:ctrlp_use_caching = 0
+else
+  let g:ctrlp_clear_cache_on_exit = 0
 endif
 
 " bind K to grep word under cursor
 nnoremap <leader>K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " colorscheme
-colorscheme monokai
+set background=light
+" colorscheme solarized
 
 set foldlevelstart=99 " start unfolded
 
@@ -100,3 +92,8 @@ let g:markdown_fenced_languages = ['haskell', 'html', 'python', 'bash=sh'] " hig
 
 " strip trailing whitespace in some files
 autocmd BufWritePre *.py,*.json %s/\s\+$//e
+
+" live on edge, but keep working directory clean
+set nobackup
+set noswapfile
+set noundofile
