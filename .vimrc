@@ -14,6 +14,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 " custom version of vim-test for scala test until I prove it and PR
 Plug 'jlulian38/vim-test'
+Plug 'her/central.vim'
 
 
 call plug#end()
@@ -92,8 +93,3 @@ let g:markdown_fenced_languages = ['haskell', 'html', 'python', 'bash=sh'] " hig
 
 " strip trailing whitespace in some files
 autocmd BufWritePre *.py,*.json %s/\s\+$//e
-
-" live on edge, but keep working directory clean
-set nobackup
-set noswapfile
-set noundofile
